@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteBase /basedir/
+    RewriteCond %{HTTP:Authorization} ^Basic.*
+    RewriteRule (.*) index.php?Authorization=%{HTTP:Authorization} [QSA,L]
+</IfModule>deny from all
